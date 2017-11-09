@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title> Registro </title>
     <style type="text/css">
 
-        body{
-            background: url(http://i65.tinypic.com/2qintpi.png);
-            background-repeat: no-repeat;
-            background-position: 280px 0px;
-            background-color: darkblue;
-        }
-
-        form{
-            margin-top: 300px;
-            margin-left: 400px;
-            width: 50%;
-            max-width: 500px;
-            background: darkblue;
-            border: 10px solid rgba(0,0,0,0.2);
-            padding: 30px;
-        }
-        input{
-            width: 100%;
-        }
 
     </style>
+
 </head>
 <body>
+
+<div>
+
+    {% block body %}
+
+        <form action="" method="get">
+        <fieldset>
+            <legend> Registrarse: </legend> 
+            Nombre:
+            <br>
+            <input type="text" name="nombre">
+            <br>
+            Contraseña:
+            <br>
+            <input type="password" name="pswd">
+            <br>
+            <br>
+            <input type="submit" name="registrar" value="entrar"> 
+
+    {% endblock %}
+
+</div>
 
 </body>
 </html>

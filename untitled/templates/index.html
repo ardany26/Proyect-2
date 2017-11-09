@@ -1,44 +1,32 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title> Index </title>
     <style type="text/css">
-        body{
-            background: url(http://i68.tinypic.com/2nulpv6.png);
-            background-repeat: no-repeat;
-            background-position: 190px 0px;
-            background-color: darkblue;
-        }
-        input[type=text]{
-            border: none;
-            border-bottom: 4px solid black;
-            margin: 20px 0;
-            background-color: blue;
-            color: white;
-        }
-        .button {
-        background-color: blue;
-        border: none;
-        border-bottom: 4px solid black;
-        color: black;
-        padding: 7px 20px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 25px;
-        cursor: pointer;
-        }
 
     </style>
 </head>
+<div class=page>
 <body>
-
-    <form>
-
-        <label for="fname">: </label>
-        <input type="text" id="fname" name="fname">
-        <input type="button" class="button" value="Entrar">
-
-    </form>
-
-
+    {% block body %}
+        <form action="" method="post"> 
+        <fieldset>
+            <legend>Iniciar sesión:</legend> 
+            Usuario:<br>
+            <input type="text" name="nombre">
+            <br>
+            Contraseña:<br>
+            <input type="password" name="pswd">
+            <br>
+            <br>
+            <input type="submit" name="entrar" value="Entrar">
+            <br>
+            <br>
+        </form>
+        <form action="/Registro">
+            <input type="submit" name="registro" value="Registrarse">
+        </form>
+    {% endblock %}
+</div>
 </body>
 </html>
