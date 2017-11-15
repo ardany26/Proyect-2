@@ -4,6 +4,12 @@
     <title> Registro </title>
     <style type="text/css">
 
+    div {
+        position: absolute;
+        width: 30%;
+        top: 200px;
+        left: 480px;
+    }
 
     </style>
 
@@ -14,7 +20,7 @@
 
     {% block body %}
 
-        <form action="" method="get">
+        <form action="" method="post" position = "absolute" top = >
         <fieldset>
             <legend> Registrarse: </legend> 
             Nombre:
@@ -26,7 +32,7 @@
             <input type="password" name="pswd">
             <br>
             <br>
-            <input type="submit" name="registrar" value="entrar"> 
+            <input type="submit" name="registrar" value="Entrar"> 
 
     {% endblock %}
 

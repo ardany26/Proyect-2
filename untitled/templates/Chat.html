@@ -4,14 +4,35 @@
 	<title> Chat </title>
 	<style type="text/css">
 
+	div {
+		position: absolute;
+        top: 400px;
+        left: 380px;
+	}
+
     </style>
 
 </head>
 <body>
-
-	<form>
-		<input type="text" name="ne">
-	</form>
-
+	<div>
+		<h1> CHAT </h1>
+		<hr>
+		<br>
+		<br>
+		{% block body %}
+	            Usuario: {{ entries.datos1 }}
+	            Chat de: {{ entries.datos3 }}
+	            <ul>
+	            {% for datos in entries.datos2 %}
+	                <br>
+	                <label>{{datos}}</label>
+	            {% endfor %}
+	            </ul>
+				<form action="" method="post">
+					<input type="text" name="mensaje">
+					<input type="submit" name="enviar" value="Enviar">
+				</form>
+		{% end block %}
+	</div>
 </body>
 </html>
