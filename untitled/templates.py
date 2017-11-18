@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import request, redirect, url_for, render_template, flash
+import sys
 
 app = Flask(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
@@ -26,7 +27,7 @@ while(x < len(psw)):
     contraseñas = contraseñas + contraseña.split(" ")
 print(contraseñas)
 
-Mensajes = []
+Mensajes = [[""],[""]]
 contador = 0
 
 
@@ -71,13 +72,14 @@ def registro():
         contraseñas = (texto[0]).split()
         if not(usuario in usuarios):
             f = open("usuarios.txt", "a")
-            f.write(" " + usuario + " ")
+            f.write(" " + usuario)
             f.close()
             if not(pswd in contraseñas):
                 g = open("contraseñas.txt", "a")
-                g.write(" " + pswd + " ")
+                g.write(" " + pswd)
                 g.close()
-                return redirect(url_for('chat'))
+                Mensajes.append([])
+                return redirect(url_for('who'))
 
     return render_template('registro.html')
 
@@ -109,11 +111,11 @@ def chat():
 
     if(request.method == 'POST'): 
         if(request.form['mensaje'] != ""):
-            mensaje = (chat, request.form['mensaje'])
+            mensaje = (  request.form['mensaje'], chat)
             i = 0
             while(i < len(usuarios)):
                 if(usuarios[i] == mensaje[1]):
-                    Mensajes.append(request.form['mensaje'])
+                    Mensajes[i].append(request.form['mensaje'])
                 i = i + 1
 
     entries = {'datos1' : request.form["nombre"], 'datos2' : Mensajes[contador], 'datos3' : chat}

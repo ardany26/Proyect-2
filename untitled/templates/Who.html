@@ -4,9 +4,16 @@
 	<title> WHO </title>
 	<style type="text/css">
 
+	body{
+        background: url(http://i65.tinypic.com/5obkmq.png);
+        background-repeat: no-repeat;
+        background-position: 490px -100px;
+        background-color: white;
+    }
+
 	div {
 		position: absolute;
-        top: 500px;
+        top: 250px;
         left: 480px;
 	}
 
@@ -16,10 +23,10 @@
 <body>
 <div>
 	<form action="" method="post">
-		Hablar con:
-		<br>
-		<input type="text" name="who">
-		<input type="submit" name="abrir" value="Abrir conversación">
+		<fieldset>
+            <legend> Hablar con: </legend> 
+			<input type="text" name="who">
+			<input type="submit" name="abrir" value="Abrir conversación">
 	</form>
 </div>
 </body>
